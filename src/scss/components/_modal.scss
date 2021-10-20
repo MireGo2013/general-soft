@@ -1,0 +1,109 @@
+.modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-9;
+
+    &-container {
+        margin: 15px;
+        max-width: 380px;
+        height: 100%;
+        max-height: 450px;
+        background-color: $color-1;
+        padding: 10px 20px 10px 20px;
+        border-radius: 10px;
+
+        @include respond-to(mobile) {
+            max-height: 370px;
+        }
+    }
+
+    &__title {
+        color: $color-2;
+        font-size: $text-large;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 10px;
+
+        @include respond-to(midle) {
+            font-size: $text-midle;
+        }
+
+        @include respond-to(mobile) {
+            font-size: $text-mobile;
+        }
+    }
+
+    &__description {
+        color: $color-2;
+        font-size: $sub-text-large;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 10px;
+
+        @include respond-to(midle) {
+            font-size: $sub-text-midle;
+        }
+
+        @include respond-to(mobile) {
+            font-size: $sub-text-mobile;
+        }
+    }
+
+    &__field {
+        margin-bottom: 10px;
+
+        & + & {
+            height: 60%;
+        }
+    }
+
+    &__btn {
+        border: 1px solid $color-3;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0px 4px 4px $color-3;
+        }
+    }
+
+    &-info {
+        height: min-content;
+    }
+
+    &-confirm {
+        height: min-content;
+
+        &__notice,
+        span {
+            color: $color-3;
+            font-size: $sub-text-large;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 10px;
+
+            & span {
+                color: $color-2;
+                font-weight: 700;
+            }
+
+            @include respond-to(midle) {
+                font-size: $sub-text-midle;
+            }
+
+            @include respond-to(mobile) {
+                font-size: $sub-text-mobile;
+            }
+        }
+
+        &__action {
+            display: flex;
+            gap: 10px;
+        }
+    }
+}

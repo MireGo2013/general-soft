@@ -1,0 +1,56 @@
+.controls-theme {
+    flex-shrink: 0;
+    flex: 1;
+
+    &__field {
+        max-width: 150px;
+        height: 45px;
+
+        & select {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            color: $color-3;
+            border: 1.5px solid $color-3;
+            border-radius: 15px;
+            padding: 0 10px;
+            font-size: $sub-text-large;
+
+            @include respond-to(midle) {
+                font-size: $sub-text-midle;
+            }
+
+            @include respond-to(mobile) {
+                font-size: $sub-text-mobile;
+            }
+        }
+
+        & select {
+            background-color: $color-1;
+
+            & option {
+                font-size: inherit;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0px 4px 1px $color-5;
+            }
+        }
+
+        @include respond-to(midle) {
+            max-width: 100px;
+            height: 30px;
+        }
+
+        @include respond-to(mobile) {
+            max-width: 80px;
+            height: 25px;
+        }
+    }
+
+    @include respond-to(midle) {
+        order: -1;
+        align-self: flex-end;
+    }
+}

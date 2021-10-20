@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Todo list</title>
+    </head>
+    <body>
+        <section id="login" class="page-login-container">
+            <form id="sign-up" class="form">
+                <div class="form-container">
+                    <h1 class="form-container__title">Sign Up</h1>
+                    <div class="form-container__field">
+                        <label class="form-container__field_label">Username</label>
+                        <input class="input" type="text" name="name" placeholder="Type name..." />
+                    </div>
+                    <div class="form-container__field invalid">
+                        <label class="form-container__field_label">Email</label>
+                        <input class="input" type="email" name="email" placeholder="Type @email..." />
+                    </div>
+                    <div class="form-container__field">
+                        <label class="form-container__field_label">Password</label>
+                        <input class="input" type="password" name="password" placeholder="Type password..." />
+                    </div>
+                    <button class="form-container__btn btn" type="submit">Accept</button>
+                </div>
+                <p class="form__notice">Already have an account? Try to <a class="form__link link-in" href="#">Sign-in!</a></p>
+            </form>
+
+            <form id="sign-in" class="form hide">
+                <div class="form-container">
+                    <h1 class="form-container__title">Sign In</h1>
+                    <div class="form-container__field">
+                        <label class="form-container__field_label">Username</label>
+                        <input class="input" type="text" name="name" placeholder="Type name..." />
+                    </div>
+                    <div class="form-container__field">
+                        <label class="form-container__field_label">Password</label>
+                        <input class="input" type="password" name="password" placeholder="Type password..." />
+                    </div>
+                    <button class="form-container__btn btn" type="submit">Accept</button>
+                </div>
+                <p class="form__notice">Don't have an account? Try to <a class="form__link link-up" href="#">Sign-up!</a></p>
+            </form>
+        </section>
+
+        <section id="main" class="hide">
+            <header class="main__header">
+                <h1 class="main__header_title">ToDo List Aplication</h1>
+                <button class="main__header_btn btn">Logout</button>
+            </header>
+            <main class="main-container">
+                <h2 class="main-container__title">Welcome, {username} here are your tasks</h2>
+                <div class="controls">
+                    <form class="controls-search">
+                        <div class="controls-search__field">
+                            <input type="search" name="search" placeholder="Search by title..." autocomplete="off" />
+                        </div>
+                        <div class="controls-search__field">
+                            <select name="select">
+                                <option value="all" selected>All</option>
+                                <option value="processing">In Processing</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div class="controls-todos">
+                        <div class="controls-todos__item">
+                            <div class="controls-todos__item-action status"></div>
+                            <p class="controls-todos__item_title">Learn JavaScript</p>
+                            <div class="controls-todos__item-action edit"></div>
+                            <div class="controls-todos__item-action remove"></div>
+                        </div>
+                        <div class="controls-todos__item done">
+                            <div class="controls-todos__item-action status"></div>
+                            <p class="controls-todos__item_title">Learn JavaScript</p>
+                            <div class="controls-todos__item-action edit"></div>
+                            <div class="controls-todos__item-action remove"></div>
+                        </div>
+                        <div class="controls-todos__item">
+                            <div class="controls-todos__item-action status"></div>
+                            <p class="controls-todos__item_title">Learn JavaScript</p>
+                            <div class="controls-todos__item-action edit"></div>
+                            <div class="controls-todos__item-action remove"></div>
+                        </div>
+                        <div class="controls-todos__item">
+                            <div class="controls-todos__item-action status"></div>
+                            <p class="controls-todos__item_title">Learn JavaScript</p>
+                            <div class="controls-todos__item-action edit"></div>
+                            <div class="controls-todos__item-action remove"></div>
+                        </div>
+                    </div>
+                    <div class="controls-theme">
+                        <div class="controls-theme__field">
+                            <select name="theme">
+                                <option value="gray" selected>Gray</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="Red">Red</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="main__btn btn btn_add"></button>
+            </main>
+        </section>
+
+        <div id="create" class="modal hide">
+            <form class="modal-container">
+                <h2 class="modal__title">Add New</h2>
+                <div class="modal__field">
+                    <input class="input" type="text" name="title" placeholder="Title..." />
+                </div>
+                <div class="modal__field">
+                    <textarea class="textarea" name="description" placeholder="Description..."></textarea>
+                </div>
+                <button class="modal__btn btn" type="submit">Add</button>
+            </form>
+        </div>
+
+        <div id="edit" class="modal hide">
+            <form class="modal-container">
+                <h2 class="modal__title">Edit</h2>
+                <div class="modal__field">
+                    <input class="input" type="text" name="title" placeholder="Title..." />
+                </div>
+                <div class="modal__field">
+                    <textarea class="textarea" name="description" placeholder="Description..."></textarea>
+                </div>
+                <button class="modal__btn btn" type="submit">Save</button>
+            </form>
+        </div>
+
+        <div id="info" class="modal hide">
+            <div class="modal-container modal-info">
+                <h2 class="modal__title">General Soft Course</h2>
+                <p class="modal__description">I have to finish General Soft course. It very important for me)))</p>
+                <button class="modal__btn btn" type="submit">Okey</button>
+            </div>
+        </div>
+
+        <div id="confirm" class="modal hide">
+            <div class="modal-container modal-confirm">
+                <p class="modal-confirm__notice">Are you sure you want to delete "<span>General Soft Course</span>" item from the list</p>
+                <div class="modal-confirm__action">
+                    <button class="modal-confirm__action_agree btn" type="submit">Yes</button>
+                    <button class="modal-confirm__action_disagree btn" type="submit">No</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="./src/index.js" type="module"></script>
+    </body>
+</html>

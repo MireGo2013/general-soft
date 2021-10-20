@@ -1,0 +1,19 @@
+$large: 1280px;
+$midle: 768px;
+$mobile: 480px;
+
+@mixin respond-to($media) {
+    @if ($media == large) {
+        @media screen and (max-width: $large) {
+            @content;
+        }
+    } @else if ($media == midle) {
+        @media screen and (max-width: $midle) {
+            @content;
+        }
+    } @else if ($media == mobile) {
+        @media screen and (max-width: $mobile) {
+            @content;
+        }
+    }
+}
