@@ -10,16 +10,16 @@
     </head>
     <body>
         <section id="login" class="page-login-container">
-            <form id="sign-up" class="form">
+            <form id="sign-up" class="form hide">
                 <div class="form-container">
                     <h1 class="form-container__title">Sign Up</h1>
                     <div class="form-container__field">
                         <label class="form-container__field_label">Username</label>
-                        <input class="input" type="text" name="name" placeholder="Type name..." />
+                        <input class="input" type="text" name="name" autocomplete="off" placeholder="Type name..." />
                     </div>
-                    <div class="form-container__field invalid">
+                    <div class="form-container__field">
                         <label class="form-container__field_label">Email</label>
-                        <input class="input" type="email" name="email" placeholder="Type @email..." />
+                        <input class="input" type="text" name="email" autocomplete="off" placeholder="Type @email..." />
                     </div>
                     <div class="form-container__field">
                         <label class="form-container__field_label">Password</label>
@@ -30,16 +30,16 @@
                 <p class="form__notice">Already have an account? Try to <a class="form__link link-in" href="#">Sign-in!</a></p>
             </form>
 
-            <form id="sign-in" class="form hide">
+            <form id="sign-in" class="form">
                 <div class="form-container">
                     <h1 class="form-container__title">Sign In</h1>
                     <div class="form-container__field">
                         <label class="form-container__field_label">Username</label>
-                        <input class="input" type="text" name="name" placeholder="Type name..." />
+                        <input class="input" type="text" name="name" autocomplete="off" placeholder="Type name..." />
                     </div>
                     <div class="form-container__field">
                         <label class="form-container__field_label">Password</label>
-                        <input class="input" type="password" name="password" placeholder="Type password..." />
+                        <input class="input sign-in__input" type="password" name="password" autocomplete="off" placeholder="Type password..." />
                     </div>
                     <button class="form-container__btn btn" type="submit">Accept</button>
                 </div>
@@ -47,15 +47,15 @@
             </form>
         </section>
 
-        <section id="main" class="hide">
-            <header class="main__header">
+        <section id="page-content" class="hide">
+            <header id="header" class="main__header">
                 <h1 class="main__header_title">ToDo List Aplication</h1>
-                <button class="main__header_btn btn">Logout</button>
+                <button id="header-btn" class="main__header_btn btn">Logout</button>
             </header>
-            <main class="main-container">
-                <h2 class="main-container__title">Welcome, {username} here are your tasks</h2>
+            <main id="main" class="main-container">
+                <h2 id="welcome" class="main-container__title">Welcome, {username} here are your tasks</h2>
                 <div class="controls">
-                    <form class="controls-search">
+                    <div class="controls-search">
                         <div class="controls-search__field">
                             <input type="search" name="search" placeholder="Search by title..." autocomplete="off" />
                         </div>
@@ -66,32 +66,9 @@
                                 <option value="completed">Completed</option>
                             </select>
                         </div>
-                    </form>
+                    </div>
                     <div class="controls-todos">
-                        <div class="controls-todos__item">
-                            <div class="controls-todos__item-action status"></div>
-                            <p class="controls-todos__item_title">Learn JavaScript</p>
-                            <div class="controls-todos__item-action edit"></div>
-                            <div class="controls-todos__item-action remove"></div>
-                        </div>
-                        <div class="controls-todos__item done">
-                            <div class="controls-todos__item-action status"></div>
-                            <p class="controls-todos__item_title">Learn JavaScript</p>
-                            <div class="controls-todos__item-action edit"></div>
-                            <div class="controls-todos__item-action remove"></div>
-                        </div>
-                        <div class="controls-todos__item">
-                            <div class="controls-todos__item-action status"></div>
-                            <p class="controls-todos__item_title">Learn JavaScript</p>
-                            <div class="controls-todos__item-action edit"></div>
-                            <div class="controls-todos__item-action remove"></div>
-                        </div>
-                        <div class="controls-todos__item">
-                            <div class="controls-todos__item-action status"></div>
-                            <p class="controls-todos__item_title">Learn JavaScript</p>
-                            <div class="controls-todos__item-action edit"></div>
-                            <div class="controls-todos__item-action remove"></div>
-                        </div>
+                        <p>List is empty</p>
                     </div>
                     <div class="controls-theme">
                         <div class="controls-theme__field">
@@ -103,7 +80,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="main__btn btn btn_add"></button>
+                <button id="create-btn" class="main__btn btn btn_add"></button>
             </main>
         </section>
 
@@ -133,13 +110,7 @@
             </form>
         </div>
 
-        <div id="info" class="modal hide">
-            <div class="modal-container modal-info">
-                <h2 class="modal__title">General Soft Course</h2>
-                <p class="modal__description">I have to finish General Soft course. It very important for me)))</p>
-                <button class="modal__btn btn" type="submit">Okey</button>
-            </div>
-        </div>
+        <div id="info" class="modal hide"></div>
 
         <div id="confirm" class="modal hide">
             <div class="modal-container modal-confirm">

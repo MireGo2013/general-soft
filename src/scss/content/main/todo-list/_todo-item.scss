@@ -23,6 +23,7 @@
             font-size: $sub-text-large;
             white-space: nowrap;
             overflow: hidden;
+            pointer-events: none;
 
             @include respond-to(midle) {
                 font-size: $sub-text-midle;

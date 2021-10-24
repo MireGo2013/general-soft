@@ -92,13 +92,3 @@
         }
     }
 }
-
-.form-container__field.invalid {
-    .form-container__field_label {
-        color: $color-4;
-    }
-    input {
-        border: 1.5px solid $color-4;
-        box-shadow: 0 0px 10px 1px $color-4;
-    }
-}

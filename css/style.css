@@ -333,16 +333,6 @@
   cursor: pointer;
 }
 
-.form-container__field.invalid .form-container__field_label {
-  color: #56221e;
-}
-
-.form-container__field.invalid input {
-  border: 1.5px solid #56221e;
-  -webkit-box-shadow: 0 0px 10px 1px #56221e;
-          box-shadow: 0 0px 10px 1px #56221e;
-}
-
 .main__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -614,6 +604,7 @@
   font-size: 1.8rem;
   white-space: nowrap;
   overflow: hidden;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -747,7 +738,7 @@
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -765,13 +756,21 @@
 }
 
 .modal-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 15px;
   max-width: 380px;
   height: 100%;
-  max-height: 450px;
+  max-height: 470px;
   background-color: #ffffff;
   padding: 10px 20px 10px 20px;
   border-radius: 10px;
+  word-wrap: break-word;
 }
 
 @media screen and (max-width: 480px) {
@@ -781,7 +780,7 @@
 }
 
 .modal__title {
-  color: #7a7a7a;
+  color: #000000b3;
   font-size: 2.3rem;
   font-weight: 400;
   text-align: center;
@@ -825,7 +824,10 @@
 }
 
 .modal__field + .modal__field {
-  height: 60%;
+  margin-bottom: 15px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .modal__btn {
@@ -907,5 +909,32 @@ html * {
 
 .done .status {
   background-color: #8ae206;
+}
+
+.form-container__field.invalid .form-container__field_label {
+  color: #56221e;
+}
+
+.form-container__field.invalid input {
+  border: 1.5px solid #56221e;
+  -webkit-box-shadow: 0 0px 10px 1px #56221e;
+          box-shadow: 0 0px 10px 1px #56221e;
+}
+
+.form-container__field.invalid .warning {
+  color: #56221e;
+  font-size: 1rem;
+}
+
+.modal__field.invalid input,
+.modal__field.invalid textarea {
+  border: 1.5px solid #56221e !important;
+  -webkit-box-shadow: 0 0px 10px 1px #56221e;
+          box-shadow: 0 0px 10px 1px #56221e;
+}
+
+.modal__field.invalid .warning {
+  color: #56221e;
+  font-size: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
