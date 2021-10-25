@@ -13,7 +13,6 @@ export class TodoInfoModalComponent extends Component {
     onShow(todoId) {
         this.component.innerHTML = '';
         const htmlInfo = renderPostInfo(todoId);
-        console.log(htmlInfo);
         this.component.insertAdjacentHTML('afterbegin', htmlInfo);
     }
 
@@ -24,9 +23,9 @@ export class TodoInfoModalComponent extends Component {
 
 function onCloseModalHandler(e) {
     const target = e.target;
-    const itsBg = target == this.component;
-    const itsOkBtn = target == this.component.querySelector('.modal__btn');
-    if (itsBg || itsOkBtn) {
+    const isBg = target == this.component;
+    const isOkBtn = target == this.component.querySelector('.modal__btn');
+    if (isBg || isOkBtn) {
         this.hide();
     }
 }

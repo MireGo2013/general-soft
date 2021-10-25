@@ -4,7 +4,7 @@ import { Storage } from '../../core/storage.js';
 import { Validator } from '../../core/validator.js';
 import { pageContent } from '../../index.js';
 
-export class FormCreatePostModalComponent extends Component {
+export class FormEditPostModalComponent extends Component {
     constructor(id) {
         super(id);
     }
@@ -19,6 +19,13 @@ export class FormCreatePostModalComponent extends Component {
         });
     }
 
+    onShow(todoId) {
+        this.id = todoId;
+        this.todoData = Storage.getTodoInfo(todoId);
+        this.formWrapper.title.value = this.todoData.title;
+        this.formWrapper.description.value = this.todoData.description;
+    }
+
     onHide() {
         this.form.clear();
     }
@@ -28,19 +35,18 @@ function onSubmitPostHandler(e) {
     e.preventDefault();
     if (this.form.isValid()) {
         const formData = {
-            id: new Date().getTime(),
+            ...this.todoData,
             ...this.form.value(),
-            status: 'processing',
         };
-        Storage.createPost(formData);
-        this.hide();
+        Storage.editPost(this.id, formData);
         pageContent.show();
+        this.hide();
     }
 }
 
 function onCloseModalHandler(e) {
     const target = e.target;
-    let isBg = target == this.component;
+    const isBg = target == this.component;
     if (isBg) {
         this.hide();
     }

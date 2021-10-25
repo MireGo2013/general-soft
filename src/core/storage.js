@@ -51,6 +51,45 @@ export class Storage {
         const currentUser = findUserData();
         return currentUser.todoList.find((todo) => todo.id == todoId);
     }
+
+    static setTodoStatus(todoId) {
+        const users = JSON.parse(localStorage.getItem('users'));
+        const currentUser = findUserData();
+        const indexCurrentUser = users.findIndex((user) => user.id === currentUser.id);
+        currentUser.todoList.forEach((todo) => {
+            if (todo.id == todoId) {
+                todo.status = todo.status === 'processing' ? 'done' : 'processing';
+            }
+        });
+        const updateUsersArray = [...users.slice(0, indexCurrentUser), currentUser, ...users.slice(indexCurrentUser + 1)];
+        localStorage.setItem('users', JSON.stringify(updateUsersArray));
+    }
+
+    static removeTodo(todoId) {
+        const users = JSON.parse(localStorage.getItem('users'));
+        const currentUser = findUserData();
+        const updateTodosArray = currentUser.todoList.filter((todo) => todo.id != todoId);
+        const updateUser = {
+            ...currentUser,
+            todoList: updateTodosArray,
+        };
+        const indexCurrentUser = users.findIndex((user) => user.id === currentUser.id);
+        const updateUsersArray = [...users.slice(0, indexCurrentUser), updateUser, ...users.slice(indexCurrentUser + 1)];
+        localStorage.setItem('users', JSON.stringify(updateUsersArray));
+    }
+
+    static editPost(todoId, formData) {
+        const users = JSON.parse(localStorage.getItem('users'));
+        const currentUser = findUserData();
+        const indexCurrentUser = users.findIndex((user) => user.id === currentUser.id);
+        const indexTodo = currentUser.todoList.findIndex((todo) => todo.id == todoId);
+        const updateUser = {
+            ...currentUser,
+            todoList: [...currentUser.todoList.slice(0, indexTodo), formData, ...currentUser.todoList.slice(indexTodo + 1)],
+        };
+        const updateUsersArray = [...users.slice(0, indexCurrentUser), updateUser, ...users.slice(indexCurrentUser + 1)];
+        localStorage.setItem('users', JSON.stringify(updateUsersArray));
+    }
 }
 
 function checkUserExist(newUser) {
