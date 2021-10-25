@@ -48,18 +48,18 @@
             }
 
             &.status {
-                background-image: url('../../../../../assets/check.png');
+                background-image: url('. ../../../../../assets/check.png');
                 background-color: $color-1;
             }
 
             &.edit {
                 margin-left: auto;
-                background-image: url('../../../../../assets/pen.png');
+                background-image: url('. ../../../../../assets/pen.png');
                 visibility: hidden;
             }
 
             &.remove {
-                background-image: url('../../../../../assets/remove.png');
+                background-image: url('. ../../../../../assets/remove.png');
                 visibility: hidden;
             }
 
