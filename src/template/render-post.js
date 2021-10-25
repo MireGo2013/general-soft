@@ -1,12 +1,35 @@
 import { Storage } from '../core/storage.js';
 
-export const renderTodos = () => {
-    const { todoList } = Storage.getUserData();
+export const renderTodos = (filters = {}) => {
+    let { todoList } = Storage.getUserData();
 
     if (todoList.length === 0) {
-        return '<p>List is empty</p>';
+        return '<p class="controls-todos__notice">List is empty</p>';
     }
-    return todoList
+    const filtersTodoList = todoList.filter((todo) => {
+        let isFindTodo = true;
+        Object.keys(filters).forEach((field) => {
+            let isFind = true;
+            switch (field) {
+                case 'title':
+                    isFind = todo.title.includes(filters[field]);
+                    if (filters[field] === '') isFind = true;
+                    break;
+                case 'status':
+                    isFind = todo.status.includes(filters[field]);
+                    if (filters[field] === 'all') isFind = true;
+                    break;
+            }
+            isFindTodo = isFind && isFindTodo;
+        });
+        return isFindTodo;
+    });
+
+    if (filtersTodoList.length === 0) {
+        return '<p class="controls-todos__notice">Nothing found</p>';
+    }
+
+    return filtersTodoList
         .map((todo) => {
             const style = todo.status === 'done' ? 'controls-todos__item done' : 'controls-todos__item';
 

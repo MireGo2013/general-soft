@@ -29,10 +29,7 @@ export class Storage {
     }
 
     static getUserData() {
-        const existUsers = JSON.parse(localStorage.getItem('users'));
-        const userId = JSON.parse(localStorage.getItem('selectedUserId'));
-        const user = existUsers.find(({ id }) => id === userId);
-        return user;
+        return findUserData();
     }
 
     static createPost(postData) {
@@ -90,6 +87,19 @@ export class Storage {
         const updateUsersArray = [...users.slice(0, indexCurrentUser), updateUser, ...users.slice(indexCurrentUser + 1)];
         localStorage.setItem('users', JSON.stringify(updateUsersArray));
     }
+
+    static setTheme(color) {
+        const users = JSON.parse(localStorage.getItem('users'));
+        const currentUser = findUserData();
+        const indexCurrentUser = users.findIndex((user) => user.id === currentUser.id);
+
+        const updateUser = {
+            ...currentUser,
+            theme: color,
+        };
+        const updateUsersArray = [...users.slice(0, indexCurrentUser), updateUser, ...users.slice(indexCurrentUser + 1)];
+        localStorage.setItem('users', JSON.stringify(updateUsersArray));
+    }
 }
 
 function checkUserExist(newUser) {
@@ -106,6 +116,7 @@ function checkUserExist(newUser) {
 
 function findUserData() {
     const userId = JSON.parse(localStorage.getItem('selectedUserId'));
+    if (!userId) return;
     const users = JSON.parse(localStorage.getItem('users'));
     return users.find((user) => user.id === userId);
 }

@@ -19,6 +19,12 @@
                 font-size: $text-mobile;
                 padding: 15px;
             }
+
+            & span {
+                color: $color-7;
+                font-size: inherit;
+                text-transform: uppercase;
+            }
         }
 
         & .controls {

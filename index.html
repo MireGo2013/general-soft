@@ -53,29 +53,29 @@
                 <button id="header-btn" class="main__header_btn btn">Logout</button>
             </header>
             <main id="main" class="main-container">
-                <h2 id="welcome" class="main-container__title">Welcome, {username} here are your tasks</h2>
+                <h2 class="main-container__title">Welcome, <span id="welcome"></span>, here are your tasks</h2>
                 <div class="controls">
-                    <div class="controls-search">
+                    <form id="search" class="controls-search">
                         <div class="controls-search__field">
-                            <input type="search" name="search" placeholder="Search by title..." autocomplete="off" />
+                            <input type="search" name="title" placeholder="Search by title..." autocomplete="off" />
                         </div>
                         <div class="controls-search__field">
-                            <select name="select">
+                            <select name="status">
                                 <option value="all" selected>All</option>
                                 <option value="processing">In Processing</option>
-                                <option value="completed">Completed</option>
+                                <option value="done">Completed</option>
                             </select>
                         </div>
-                    </div>
+                    </form>
                     <div class="controls-todos">
                         <p>List is empty</p>
                     </div>
                     <div class="controls-theme">
                         <div class="controls-theme__field">
-                            <select name="theme">
+                            <select id="theme" name="theme">
                                 <option value="gray" selected>Gray</option>
                                 <option value="yellow">Yellow</option>
-                                <option value="Red">Red</option>
+                                <option value="red">Red</option>
                             </select>
                         </div>
                     </div>

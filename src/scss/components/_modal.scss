@@ -79,7 +79,9 @@
     }
 
     &-info {
+        min-width: 280px;
         height: min-content;
+        overflow: auto;
     }
 
     &-confirm {

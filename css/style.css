@@ -692,6 +692,10 @@
   }
 }
 
+.controls-todos__notice {
+  font-size: 1.8rem;
+}
+
 .main-container__title {
   color: #7a7a7a;
   font-size: 2.3rem;
@@ -711,6 +715,12 @@
     font-size: 1.2rem;
     padding: 15px;
   }
+}
+
+.main-container__title span {
+  color: #000000;
+  font-size: inherit;
+  text-transform: uppercase;
 }
 
 .main-container .controls {
@@ -844,9 +854,11 @@
 }
 
 .modal-info {
+  min-width: 280px;
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
+  overflow: auto;
 }
 
 .modal-confirm {
@@ -906,7 +918,8 @@ html * {
 }
 
 .done {
-  text-decoration: line-through;
+  -webkit-text-decoration: line-through #000000;
+          text-decoration: line-through #000000;
 }
 
 .done .status {
@@ -938,5 +951,23 @@ html * {
 .modal__field.invalid .warning {
   color: #56221e;
   font-size: 1rem;
+}
+
+.yellow .main__header,
+.yellow .btn_add,
+.yellow .controls-todos__item {
+  background-color: #a1a10c;
+}
+
+.gray .main__header,
+.gray .btn_add,
+.gray .controls-todos__item {
+  background-color: #c0c0bf8a;
+}
+
+.red .main__header,
+.red .btn_add,
+.red .controls-todos__item {
+  background-color: #f78090;
 }
 /*# sourceMappingURL=style.css.map */

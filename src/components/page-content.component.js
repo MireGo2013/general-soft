@@ -2,6 +2,8 @@ import { Component } from '../core/component.js';
 import { Storage } from '../core/storage.js';
 import { confirmActionModal, formCreatePostModal, formEditPostModal, todoInfoModal } from '../index.js';
 import { renderTodos } from '../template/render-post.js';
+import { SearchComponent } from './search.component.js';
+import { ThemeComponent } from './theme.component.js';
 
 export class PageContentComponent extends Component {
     constructor(id, pageAuthorization) {
@@ -15,14 +17,24 @@ export class PageContentComponent extends Component {
         this.createBtn = document.getElementById('create-btn');
         this.createBtn.addEventListener('click', onShowFormCreatePosttHandler.bind(this));
         this.todoList = document.querySelector('.controls-todos');
+        this.search = new SearchComponent('search');
+        this.welcome = document.getElementById('welcome');
+        this.theme = new ThemeComponent('theme', this.component);
     }
 
     onShow() {
         this.todoList.innerHTML = '';
-        const html = renderTodos();
+        this.component.classList.add(this.theme.value());
+        const html = renderTodos(this.search.value());
         this.todoList.insertAdjacentHTML('afterbegin', html);
         this.items = this.todoList.querySelectorAll('.controls-todos__item');
         Array.from(this.items).forEach((item) => item.addEventListener('click', onTodoHandler));
+        this.welcome.innerText = Storage.getUserData().name;
+    }
+
+    onHide() {
+        this.search.clear();
+        this.welcome.innerText = '';
     }
 }
 

@@ -23,7 +23,6 @@ export class PageAuthorizationComponent extends Component {
 }
 
 function onChangeFormHandler(e) {
-    console.log('cliiiick');
     e.preventDefault();
     if (e.target.classList.contains('link-in')) {
         this.signUp.hide();
