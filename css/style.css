@@ -636,18 +636,18 @@
 }
 
 .controls-todos__item-action.status {
-  background-image: url(". ../../../../../assets/check.png");
+  background-image: url("./../assets/check.png");
   background-color: #ffffff;
 }
 
 .controls-todos__item-action.edit {
   margin-left: auto;
-  background-image: url(". ../../../../../assets/pen.png");
+  background-image: url("./../assets/pen.png");
   visibility: hidden;
 }
 
 .controls-todos__item-action.remove {
-  background-image: url(". ../../../../../assets/remove.png");
+  background-image: url("./../assets/remove.png");
   visibility: hidden;
 }
 
