@@ -11,9 +11,11 @@ export class TodoInfoModalComponent extends Component {
     }
 
     onShow(todoId) {
-        this.component.innerHTML = '';
-        const htmlInfo = renderPostInfo(todoId);
-        this.component.insertAdjacentHTML('afterbegin', htmlInfo);
+        if (location.href.includes(todoId)) {
+            this.component.innerHTML = '';
+            const htmlInfo = renderPostInfo(todoId);
+            this.component.insertAdjacentHTML('afterbegin', htmlInfo);
+        }
     }
 
     onHide() {

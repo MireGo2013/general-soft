@@ -51,6 +51,7 @@ function onShowFormCreatePosttHandler() {
 function onTodoHandler(e) {
     const todoId = this.dataset.todoId;
     if (e.target.classList.contains('controls-todos__item')) {
+        history.pushState(todoId, null, todoId);
         todoInfoModal.show(todoId);
     }
     if (e.target.classList.contains('status')) {

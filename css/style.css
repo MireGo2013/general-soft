@@ -843,7 +843,8 @@
 }
 
 .modal__btn {
-  border: 1px solid #c0c0bf8a;
+  border: 1px solid #99befa;
+  color: #000000b3;
 }
 
 .modal__btn:hover {
@@ -901,6 +902,68 @@
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+}
+
+.modal-confirm__action_agree {
+  color: #f78090;
+  border: 1px solid #f78090;
+}
+
+.modal-confirm__action_disagree {
+  color: #000000b3;
+  border: 1px solid #000000b3;
+}
+
+.notification__wrapper {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  color: chocolate;
+  width: 200px;
+  min-height: 60px;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 7px;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  -webkit-animation: dropDown 1s ease;
+          animation: dropDown 1s ease;
+  visibility: visible;
+}
+
+.notification__text {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 480px) {
+  .notification__text {
+    font-size: 1rem;
+  }
+}
+
+@-webkit-keyframes dropDown {
+  100% {
+    -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
+  }
+}
+
+@keyframes dropDown {
+  100% {
+    -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
+  }
 }
 
 html * {

@@ -12,7 +12,7 @@ export const renderTodos = (filters = {}) => {
             let isFind = true;
             switch (field) {
                 case 'title':
-                    isFind = todo.title.includes(filters[field]);
+                    isFind = todo.title.toLowerCase().includes(filters[field].toLowerCase());
                     if (filters[field] === '') isFind = true;
                     break;
                 case 'status':

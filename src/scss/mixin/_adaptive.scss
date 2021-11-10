@@ -1,6 +1,4 @@
-$large: 1280px;
-$midle: 768px;
-$mobile: 480px;
+@import '../constants/breakpoints';
 
 @mixin respond-to($media) {
     @if ($media == large) {

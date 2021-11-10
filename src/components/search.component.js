@@ -15,7 +15,7 @@ export class SearchComponent extends Component {
     }
 
     init() {
-        this.component.addEventListener('change', onSearchTextHandler.bind(this));
+        this.component.addEventListener('input', onSearchTextHandler.bind(this));
     }
 
     clear() {
@@ -27,6 +27,7 @@ export class SearchComponent extends Component {
 }
 
 function onSearchTextHandler(e) {
+    e.preventDefault();
     Object.keys(this.filters).forEach((field) => {
         this.filters[field] = this.component[field].value;
     });

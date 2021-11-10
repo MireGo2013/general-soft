@@ -38,7 +38,9 @@ function onSubmitPostHandler(e) {
             ...this.todoData,
             ...this.form.value(),
         };
-        Storage.editPost(this.id, formData);
+        if (this.formWrapper.title.value !== this.todoData.title || this.formWrapper.description.value !== this.todoData.description) {
+            Storage.editPost(this.id, formData);
+        }
         pageContent.show();
         this.hide();
     }

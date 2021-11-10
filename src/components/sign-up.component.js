@@ -37,7 +37,9 @@ function onSubmitHandler(e) {
         const userId = Storage.createNewUser(formData);
         if (!userId) return;
         localStorage.setItem('selectedUserId', userId);
-        this.page.classList.add('hide');
-        pageContent.show();
+        setTimeout(() => {
+            this.page.classList.add('hide');
+            pageContent.show();
+        }, 1500);
     }
 }

@@ -1,16 +1,17 @@
+import { notification } from '../index.js';
 export class Storage {
     static createNewUser(userData) {
         if (!localStorage.getItem('users')) {
             localStorage.setItem('users', JSON.stringify([userData]));
         } else {
             if (checkUserExist(userData)) {
-                alert('This user already exists');
+                notification.show('This user already exists');
                 return;
             }
             const existUsers = JSON.parse(localStorage.getItem('users'));
             localStorage.setItem('users', JSON.stringify([...existUsers, userData]));
         }
-        alert('Account is created');
+        notification.show('Account is created');
 
         return userData.id;
     }
@@ -21,10 +22,10 @@ export class Storage {
             return name === login.name && password === login.password;
         });
         if (user) {
-            alert('Successful authorization');
+            notification.show('Successful authorization');
             return user.id;
         } else {
-            alert('Incorrect login or password');
+            notification.show('Incorrect login or password');
         }
     }
 
@@ -42,6 +43,7 @@ export class Storage {
         const indexCurrentUser = users.findIndex((user) => user.id === currentUser.id);
         const updateUsersArray = [...users.slice(0, indexCurrentUser), updateUser, ...users.slice(indexCurrentUser + 1)];
         localStorage.setItem('users', JSON.stringify(updateUsersArray));
+        notification.show('Post created');
     }
 
     static getTodoInfo(todoId) {
@@ -73,6 +75,7 @@ export class Storage {
         const indexCurrentUser = users.findIndex((user) => user.id === currentUser.id);
         const updateUsersArray = [...users.slice(0, indexCurrentUser), updateUser, ...users.slice(indexCurrentUser + 1)];
         localStorage.setItem('users', JSON.stringify(updateUsersArray));
+        notification.show('Post removed');
     }
 
     static editPost(todoId, formData) {
@@ -86,6 +89,7 @@ export class Storage {
         };
         const updateUsersArray = [...users.slice(0, indexCurrentUser), updateUser, ...users.slice(indexCurrentUser + 1)];
         localStorage.setItem('users', JSON.stringify(updateUsersArray));
+        notification.show('Post chanded');
     }
 
     static setTheme(color) {

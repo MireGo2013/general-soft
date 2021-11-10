@@ -1,0 +1,33 @@
+.notification {
+    &__wrapper {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        color: chocolate;
+        width: 200px;
+        min-height: 60px;
+        border-radius: 15px;
+        border: 1px solid $color-7;
+        background-color: $color-1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px;
+        transform: translate(-50%, -100%);
+        animation: dropDown 1s ease;
+        visibility: visible;
+    }
+    &__text {
+        text-align: center;
+        font-size: $sub-text-midle;
+        @include respond-to(mobile) {
+            font-size: $sub-text-mobile;
+        }
+    }
+}
+
+@keyframes dropDown {
+    100% {
+        transform: translate(-50%, 50%);
+    }
+}
