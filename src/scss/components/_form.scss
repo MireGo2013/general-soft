@@ -1,0 +1,132 @@
+.form {
+    &-container {
+        padding: 0 10px;
+        max-width: 500px;
+        margin: 0 auto;
+        border: 2px solid $color-2;
+        border-radius: 5%;
+        background-color: $color-1;
+        padding: 10px 25px;
+
+        @include respond-to(midle) {
+            max-width: 430px;
+        }
+
+        @include respond-to(mobile) {
+            max-width: 300px;
+        }
+    }
+
+    &__title {
+        color: $color-2;
+        font-size: $title-large;
+        padding: 10px;
+        font-weight: 700;
+        text-align: center;
+
+        @include respond-to(midle) {
+            font-size: $title-midle;
+        }
+
+        @include respond-to(mobile) {
+            font-size: $title-mobile;
+        }
+    }
+
+    &__field {
+        margin-bottom: 15px;
+
+        &-label {
+            color: $color-5;
+            font-size: $text-large;
+            text-align: start;
+            align-self: flex-start;
+
+            @include respond-to(midle) {
+                font-size: $text-midle;
+            }
+
+            @include respond-to(mobile) {
+                font-size: $text-mobile;
+            }
+        }
+
+        &-input {
+            color: $color-7;
+            font-size: $text-large;
+            height: 50px;
+            width: 100%;
+            border: 1.5px solid $color-3;
+            border-radius: 15px;
+            padding: 0 10px;
+
+            @include respond-to(midle) {
+                font-size: $text-midle;
+                height: 40px;
+            }
+
+            @include respond-to(mobile) {
+                font-size: $text-mobile;
+                height: 35px;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0px 4px 1px $color-5;
+            }
+            &::placeholder {
+                color: $color-3;
+                font-size: $sub-text-large;
+
+                @include respond-to(midle) {
+                    font-size: $sub-text-midle;
+                }
+
+                @include respond-to(mobile) {
+                    font-size: $sub-text-mobile;
+                }
+            }
+        }
+
+        &.invalid {
+            &-label {
+                color: $color-4;
+            }
+            &-input {
+                border: 1.5px solid $color-4;
+                box-shadow: 0 0px 10px 1px $color-4;
+            }
+            & .warning {
+                color: $color-4;
+                font-size: $sub-text-mobile;
+            }
+        }
+    }
+
+    &__btn {
+        color: $color-1;
+        background-color: $color-5;
+    }
+
+    &__notice {
+        color: $color-2;
+        text-align: center;
+        font-size: $text-large;
+        margin-top: 15px;
+
+        @include respond-to(midle) {
+            font-size: $text-midle;
+        }
+
+        @include respond-to(mobile) {
+            font-size: $text-mobile;
+        }
+    }
+
+    &__link {
+        color: $color-4;
+        font-size: inherit;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,48 @@
+.header {
+    &-container {
+        background-color: $color-theme;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 10px;
+    }
+
+    &__title {
+        font-size: $title-large;
+        color: $color-2;
+        text-align: center;
+        margin: 0 auto;
+
+        @include respond-to(midle) {
+            font-size: $title-midle;
+        }
+
+        @include respond-to(mobile) {
+            font-size: $title-mobile;
+        }
+    }
+
+    &__btn {
+        color: $color-7;
+        height: 50px;
+        border-radius: 20px;
+        margin: 0;
+        background-color: $color-1;
+
+        &:hover {
+            box-shadow: 0 0px 4px 1px $color-1;
+        }
+
+        @include respond-to(midle) {
+            font-size: $sub-text-midle;
+            max-width: 140px;
+            height: 40px;
+        }
+
+        @include respond-to(mobile) {
+            font-size: $sub-text-mobile;
+            max-width: 100px;
+            height: 35px;
+        }
+    }
+}

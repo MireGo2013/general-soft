@@ -5,19 +5,25 @@
 @import './components/input';
 @import './components/textarea';
 @import './components/button';
-@import './login/page-login';
-@import './content/header/header';
 @import './content/main/main-layout';
 @import './components/modal';
 @import './components/notification';
+@import './pages/authorization';
+@import './pages/app';
 
-html * {
-    font-family: 'Roboto', sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+html {
+    height: 100%;
+    & * {
+        font-family: 'Roboto', sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    & body {
+        height: 100%;
+    }
 }
 
 .hide {
@@ -28,20 +34,6 @@ html * {
     text-decoration: line-through $color-7;
     .status {
         background-color: $color-8;
-    }
-}
-
-.form-container__field.invalid {
-    .form-container__field_label {
-        color: $color-4;
-    }
-    input {
-        border: 1.5px solid $color-4;
-        box-shadow: 0 0px 10px 1px $color-4;
-    }
-    & .warning {
-        color: $color-4;
-        font-size: $sub-text-mobile;
     }
 }
 

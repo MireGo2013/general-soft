@@ -9,48 +9,52 @@
         <title>Todo list</title>
     </head>
     <body>
-        <section id="login" class="page-login-container">
-            <form id="sign-up" class="form hide">
-                <div class="form-container">
-                    <h1 class="form-container__title">Sign Up</h1>
-                    <div class="form-container__field">
-                        <label class="form-container__field_label">Username</label>
-                        <input class="input" type="text" name="name" autocomplete="off" placeholder="Type name..." />
+        <section id="login" class="page-authorization">
+            <div class="page-authorization-container">
+                <form id="sign-up" class="form hide">
+                    <div class="form-container">
+                        <h1 class="form__title">Sign Up</h1>
+                        <div class="form__field">
+                            <label class="form__field-label">Username</label>
+                            <input class="form__field-input" type="text" name="name" autocomplete="off" placeholder="Type name..." />
+                        </div>
+                        <div class="form__field">
+                            <label class="form__field-label">Email</label>
+                            <input class="form__field-input" type="text" name="email" autocomplete="off" placeholder="Type @email..." />
+                        </div>
+                        <div class="form__field">
+                            <label class="form__field-label">Password</label>
+                            <input class="form__field-input" type="password" name="password" placeholder="Type password..." />
+                        </div>
+                        <button class="form__btn btn" type="submit">Accept</button>
                     </div>
-                    <div class="form-container__field">
-                        <label class="form-container__field_label">Email</label>
-                        <input class="input" type="text" name="email" autocomplete="off" placeholder="Type @email..." />
-                    </div>
-                    <div class="form-container__field">
-                        <label class="form-container__field_label">Password</label>
-                        <input class="input" type="password" name="password" placeholder="Type password..." />
-                    </div>
-                    <button class="form-container__btn btn" type="submit">Accept</button>
-                </div>
-                <p class="form__notice">Already have an account? Try to <a class="form__link link-in" href="#">Sign-in!</a></p>
-            </form>
+                    <p class="form__notice">Already have an account? Try to <a class="form__link link-in" href="#">Sign-in!</a></p>
+                </form>
 
-            <form id="sign-in" class="form">
-                <div class="form-container">
-                    <h1 class="form-container__title">Sign In</h1>
-                    <div class="form-container__field">
-                        <label class="form-container__field_label">Username</label>
-                        <input class="input" type="text" name="name" autocomplete="off" placeholder="Type name..." />
+                <form id="sign-in" class="form">
+                    <div class="form-container">
+                        <h1 class="form__title">Sign In</h1>
+                        <div class="form__field">
+                            <label class="form__field-label">Username</label>
+                            <input class="form__field-input" type="text" name="name" autocomplete="off" placeholder="Type name..." />
+                        </div>
+                        <div class="form__field">
+                            <label class="form__field-label">Password</label>
+                            <input class="form__field-input" type="password" name="password" autocomplete="off" placeholder="Type password..." />
+                        </div>
+                        <button class="form__btn btn" type="submit">Accept</button>
                     </div>
-                    <div class="form-container__field">
-                        <label class="form-container__field_label">Password</label>
-                        <input class="input sign-in__input" type="password" name="password" autocomplete="off" placeholder="Type password..." />
-                    </div>
-                    <button class="form-container__btn btn" type="submit">Accept</button>
-                </div>
-                <p class="form__notice">Don't have an account? Try to <a class="form__link link-up" href="#">Sign-up!</a></p>
-            </form>
+                    <p class="form__notice">Don't have an account? Try to <a class="form__link link-up" href="#">Sign-up!</a></p>
+                </form>
+            </div>
         </section>
 
-        <section id="page-content" class="hide">
-            <header id="header" class="main__header">
-                <h1 class="main__header_title">ToDo List Aplication</h1>
-                <button id="header-btn" class="main__header_btn btn">Logout</button>
+        <section id="page-content" class="page-app hide">
+            <header id="header" class="header">
+                <div class="header-container">
+                    <h1 class="header__title">ToDo List Aplication</h1>
+                    <button id="header-btn" class="header__btn btn">Logout</button>
+                </div>
             </header>
             <main id="main" class="main-container">
                 <h2 class="main-container__title">Welcome, <span id="welcome"></span>, here are your tasks</h2>
@@ -121,3 +125,40 @@
         <script src="./src/index.js" type="module"></script>
     </body>
 </html>
+
+<!-- <section id="page-content" class="hide">
+    <header id="header" class="main__header">
+        <h1 class="main__header_title">ToDo List Aplication</h1>
+        <button id="header-btn" class="main__header_btn btn">Logout</button>
+    </header>
+    <main id="main" class="main-container">
+        <h2 class="main-container__title">Welcome, <span id="welcome"></span>, here are your tasks</h2>
+        <div class="controls">
+            <form id="search" class="controls-search">
+                <div class="controls-search__field">
+                    <input type="search" name="title" placeholder="Search by title..." autocomplete="off" />
+                </div>
+                <div class="controls-search__field">
+                    <select name="status">
+                        <option value="all" selected>All</option>
+                        <option value="processing">In Processing</option>
+                        <option value="done">Completed</option>
+                    </select>
+                </div>
+            </form>
+            <div class="controls-todos">
+                <p>List is empty</p>
+            </div>
+            <div class="controls-theme">
+                <div class="controls-theme__field">
+                    <select id="theme" name="theme">
+                        <option value="gray" selected>Gray</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="red">Red</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button id="create-btn" class="main__btn btn btn_add"></button>
+    </main>
+</section> -->
