@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import './constants/colors';
+@import './constants/theme-colors';
 @import './mixin/adaptive';
 @import './constants/font-size';
-@import './components/input';
-@import './components/textarea';
 @import './components/button';
-@import './content/main/main-layout';
 @import './components/modal';
 @import './components/notification';
 @import './pages/authorization';
-@import './pages/app';
+@import './pages/application';
 
 html {
     height: 100%;
@@ -28,47 +25,4 @@ html {
 
 .hide {
     display: none !important;
-}
-
-.done {
-    text-decoration: line-through $color-7;
-    .status {
-        background-color: $color-8;
-    }
-}
-
-.modal__field.invalid {
-    input,
-    textarea {
-        border: 1.5px solid $color-4 !important;
-        box-shadow: 0 0px 10px 1px $color-4;
-    }
-    & .warning {
-        color: $color-4;
-        font-size: $sub-text-mobile;
-    }
-}
-
-.yellow {
-    .main__header,
-    .btn_add,
-    .controls-todos__item {
-        background-color: $color-yellow;
-    }
-}
-
-.gray {
-    .main__header,
-    .btn_add,
-    .controls-todos__item {
-        background-color: $color-gray;
-    }
-}
-
-.red {
-    .main__header,
-    .btn_add,
-    .controls-todos__item {
-        background-color: $color-red;
-    }
 }

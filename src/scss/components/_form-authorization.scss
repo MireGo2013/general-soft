@@ -3,9 +3,9 @@
         padding: 0 10px;
         max-width: 500px;
         margin: 0 auto;
-        border: 2px solid $color-2;
+        border: 2px solid #7a7a7a;
         border-radius: 5%;
-        background-color: $color-1;
+        background-color: #ffffff;
         padding: 10px 25px;
 
         @include respond-to(midle) {
@@ -18,7 +18,7 @@
     }
 
     &__title {
-        color: $color-2;
+        color: #7a7a7a;
         font-size: $title-large;
         padding: 10px;
         font-weight: 700;
@@ -37,7 +37,7 @@
         margin-bottom: 15px;
 
         &-label {
-            color: $color-5;
+            color: #99befa;
             font-size: $text-large;
             text-align: start;
             align-self: flex-start;
@@ -52,11 +52,11 @@
         }
 
         &-input {
-            color: $color-7;
+            color: #000000;
             font-size: $text-large;
             height: 50px;
             width: 100%;
-            border: 1.5px solid $color-3;
+            border: 1.5px solid #c0c0bf8a;
             border-radius: 15px;
             padding: 0 10px;
 
@@ -72,10 +72,10 @@
 
             &:focus {
                 outline: none;
-                box-shadow: 0 0px 4px 1px $color-5;
+                box-shadow: 0 0px 4px 1px #99befa;
             }
             &::placeholder {
-                color: $color-3;
+                color: #c0c0bf8a;
                 font-size: $sub-text-large;
 
                 @include respond-to(midle) {
@@ -89,27 +89,28 @@
         }
 
         &.invalid {
-            &-label {
-                color: $color-4;
+            .form__field-label {
+                color: #56221e;
             }
-            &-input {
-                border: 1.5px solid $color-4;
-                box-shadow: 0 0px 10px 1px $color-4;
+            .form__field-input {
+                border: 1.5px solid #56221e;
+                box-shadow: 0 0px 10px 1px #56221e;
             }
-            & .warning {
-                color: $color-4;
+            .form__field-warning {
+                color: #56221e;
                 font-size: $sub-text-mobile;
             }
         }
     }
 
     &__btn {
-        color: $color-1;
-        background-color: $color-5;
+        color: #ffffff;
+        background-color: #99befa;
+        margin: 10px auto;
     }
 
     &__notice {
-        color: $color-2;
+        color: #7a7a7a;
         text-align: center;
         font-size: $text-large;
         margin-top: 15px;
@@ -124,7 +125,7 @@
     }
 
     &__link {
-        color: $color-4;
+        color: #56221e;
         font-size: inherit;
         text-decoration: none;
         cursor: pointer;

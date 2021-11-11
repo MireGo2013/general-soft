@@ -1,22 +1,21 @@
 .notification {
-    &__wrapper {
-        position: absolute;
-        top: 0px;
-        left: 50%;
-        color: chocolate;
-        width: 200px;
-        min-height: 60px;
-        border-radius: 15px;
-        border: 1px solid $color-7;
-        background-color: $color-1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 7px;
-        transform: translate(-50%, -100%);
-        animation: dropDown 1s ease;
-        visibility: visible;
-    }
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    color: chocolate;
+    width: 200px;
+    min-height: 60px;
+    border-radius: 15px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    transform: translate(-50%, -100%);
+    animation: dropDown 1s ease;
+    visibility: visible;
+
     &__text {
         text-align: center;
         font-size: $sub-text-midle;

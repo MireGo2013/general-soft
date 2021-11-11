@@ -1,6 +1,6 @@
 .header {
     &-container {
-        background-color: $color-theme;
+        background-color: $theme-color;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -9,7 +9,7 @@
 
     &__title {
         font-size: $title-large;
-        color: $color-2;
+        color: #7a7a7a;
         text-align: center;
         margin: 0 auto;
 
@@ -23,14 +23,14 @@
     }
 
     &__btn {
-        color: $color-7;
+        color: #000000;
         height: 50px;
         border-radius: 20px;
         margin: 0;
-        background-color: $color-1;
+        background-color: #ffffff;
 
         &:hover {
-            box-shadow: 0 0px 4px 1px $color-1;
+            box-shadow: 0 0px 4px 1px #ffffff;
         }
 
         @include respond-to(midle) {

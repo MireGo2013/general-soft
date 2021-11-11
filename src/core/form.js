@@ -74,5 +74,5 @@ function clearNoticeError(input) {
 }
 
 function setErrorText(text) {
-    return `<p class='warning'>${text}</p>`;
+    return `<p class='form__field-warning'>${text}</p>`;
 }

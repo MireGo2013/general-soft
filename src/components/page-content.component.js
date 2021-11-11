@@ -16,7 +16,7 @@ export class PageContentComponent extends Component {
         this.logoutBtn.addEventListener('click', onLogoutHandler.bind(this));
         this.createBtn = document.getElementById('create-btn');
         this.createBtn.addEventListener('click', onShowFormCreatePosttHandler.bind(this));
-        this.todoList = document.querySelector('.controls-todos');
+        this.todoList = document.querySelector('.todos-container');
         this.search = new SearchComponent('search');
         this.welcome = document.getElementById('welcome');
         this.theme = new ThemeComponent('theme', this.component);
@@ -27,7 +27,7 @@ export class PageContentComponent extends Component {
         this.component.classList.add(this.theme.value());
         const html = renderTodos(this.search.value());
         this.todoList.insertAdjacentHTML('afterbegin', html);
-        this.items = this.todoList.querySelectorAll('.controls-todos__item');
+        this.items = this.todoList.querySelectorAll('.todos__item');
         Array.from(this.items).forEach((item) => item.addEventListener('click', onTodoHandler));
         this.welcome.innerText = Storage.getUserData().name;
     }
@@ -50,19 +50,19 @@ function onShowFormCreatePosttHandler() {
 
 function onTodoHandler(e) {
     const todoId = this.dataset.todoId;
-    if (e.target.classList.contains('controls-todos__item')) {
+    if (e.target.classList.contains('todos__item')) {
         history.pushState(todoId, null, todoId);
         todoInfoModal.show(todoId);
     }
-    if (e.target.classList.contains('status')) {
-        this.classList.toggle('done');
+    if (e.target.classList.contains('todos__item-status')) {
+        this.classList.toggle('todos__item--done');
         this.dataset.todoStatus = this.dataset.todoStatus === 'processing' ? 'done' : 'processing';
         Storage.setTodoStatus(todoId);
     }
-    if (e.target.classList.contains('remove')) {
+    if (e.target.classList.contains('todos__item-remove')) {
         confirmActionModal.show(todoId);
     }
-    if (e.target.classList.contains('edit')) {
+    if (e.target.classList.contains('todos__item-edit')) {
         formEditPostModal.show(todoId);
     }
 }

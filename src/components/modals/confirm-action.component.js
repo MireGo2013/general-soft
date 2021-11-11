@@ -27,11 +27,11 @@ export class ConfirmActionComponent extends Component {
 function onCloseModalHandler(e) {
     const target = e.target;
     const isBg = target == this.component;
-    const isCancelBtn = target == this.component.querySelector('.modal-confirm__action_disagree');
+    const isCancelBtn = target == this.component.querySelector('.modal__btn--disagree');
     if (isBg || isCancelBtn) {
         this.hide();
     }
-    if (e.target.classList.contains('modal-confirm__action_agree')) {
+    if (e.target.classList.contains('modal__btn--agree')) {
         Storage.removeTodo(this.id);
         this.hide();
         pageContent.show();

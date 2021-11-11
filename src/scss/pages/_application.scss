@@ -1,0 +1,84 @@
+@import '../components/header';
+@import '../components/form-search';
+@import '../components/theme';
+@import '../components/todos';
+
+.application {
+    &__title {
+        color: #7a7a7a;
+        font-size: $text-large;
+        text-align: center;
+        padding: 25px;
+
+        @include respond-to(midle) {
+            font-size: $text-midle;
+            padding: 20px;
+        }
+
+        @include respond-to(mobile) {
+            font-size: $text-mobile;
+            padding: 15px;
+        }
+        &-name {
+            color: #000000;
+            font-size: inherit;
+            text-transform: uppercase;
+        }
+    }
+
+    &__controls {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        margin: 0 15px;
+        flex-wrap: wrap-reverse;
+
+        @include respond-to(midle) {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    &__todos {
+        @include respond-to(midle) {
+            width: 100%;
+            order: 3;
+        }
+    }
+
+    &__form-search {
+        margin-left: auto;
+        flex-shrink: 0;
+        @include respond-to(midle) {
+            margin: auto;
+            order: 2;
+        }
+    }
+    &__theme {
+        margin-right: auto;
+        margin-bottom: 20px;
+        flex-shrink: 0;
+        @include respond-to(midle) {
+            margin-right: 0;
+            margin-left: auto;
+            order: 1;
+        }
+    }
+
+    &__btn {
+        border: 1px solid #7a7a7a;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-image: url('. ../../../assets/plus.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 20px 30px 0 auto;
+
+        @include respond-to(midle) {
+            width: 80px;
+            height: 80px;
+        }
+    }
+}

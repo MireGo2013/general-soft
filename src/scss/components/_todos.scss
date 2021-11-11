@@ -1,29 +1,43 @@
-.controls-todos {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.todos {
+    &-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     &__item {
         width: 100%;
-        max-width: 450px;
         height: 70px;
+        max-width: 400px;
         border-radius: 15px;
-        border: 1px solid $color-2;
+        border: 1px solid #7a7a7a;
         display: flex;
         align-items: center;
         gap: 10px;
-        background-color: $color-theme;
-        color: $color-2;
+        background-color: $theme-color;
+        color: #7a7a7a;
         padding: 20px;
         margin-bottom: 15px;
 
-        &_title {
+        @include respond-to(midle) {
+            padding: 15px;
+            height: 65px;
+        }
+
+        @include respond-to(mobile) {
+            padding: 10px;
+            height: 60px;
+        }
+
+        &-title {
             font-size: $sub-text-large;
             white-space: nowrap;
             overflow: hidden;
             pointer-events: none;
+            min-width: 150px;
+            width: 100%;
+            max-width: 350px;
 
             @include respond-to(midle) {
                 font-size: $sub-text-midle;
@@ -34,7 +48,9 @@
             }
         }
 
-        &-action {
+        &-status,
+        &-edit,
+        &-remove {
             width: 35px;
             height: 35px;
             border-radius: 50%;
@@ -45,22 +61,6 @@
 
             &:hover {
                 transform: scale(1.1);
-            }
-
-            &.status {
-                background-image: url('./../assets/check.png');
-                background-color: $color-1;
-            }
-
-            &.edit {
-                margin-left: auto;
-                background-image: url('./../assets/pen.png');
-                visibility: hidden;
-            }
-
-            &.remove {
-                background-image: url('./../assets/remove.png');
-                visibility: hidden;
             }
 
             @include respond-to(midle) {
@@ -74,26 +74,35 @@
             }
         }
 
+        &-status {
+            background-image: url('./../assets/check.png');
+            background-color: #ffffff;
+        }
+        &-edit {
+            margin-left: auto;
+            background-image: url('./../assets/pen.png');
+            visibility: hidden;
+        }
+        &-remove {
+            background-image: url('./../assets/remove.png');
+            visibility: hidden;
+        }
+
         &:hover {
             cursor: pointer;
-            box-shadow: 0 0px 4px 5px $color-2;
+            box-shadow: 0 0px 4px 5px #7a7a7a;
 
-            .remove,
-            .edit {
+            .todos__item-edit,
+            .todos__item-remove {
                 visibility: visible;
             }
         }
 
-        @include respond-to(midle) {
-            font-size: $text-midle;
-            padding: 15px;
-            height: 65px;
-        }
-
-        @include respond-to(mobile) {
-            font-size: $text-mobile;
-            padding: 10px;
-            height: 60px;
+        &--done {
+            text-decoration: line-through #000000;
+            .todos__item-status {
+                background-color: #8ae206;
+            }
         }
     }
 

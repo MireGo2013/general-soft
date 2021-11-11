@@ -1,0 +1,65 @@
+.theme {
+    &__field {
+        height: 45px;
+
+        @include respond-to(midle) {
+            height: 30px;
+        }
+
+        @include respond-to(mobile) {
+            height: 25px;
+        }
+
+        &-select {
+            cursor: pointer;
+            height: 100%;
+            color: #c0c0bf8a;
+            border: 1.5px solid #c0c0bf8a;
+            border-radius: 15px;
+            padding: 0 10px;
+            font-size: $sub-text-large;
+            background-color: #ffffff;
+
+            @include respond-to(midle) {
+                font-size: $sub-text-midle;
+            }
+
+            @include respond-to(mobile) {
+                font-size: $sub-text-mobile;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0px 4px 1px #99befa;
+            }
+
+            &-option {
+                font-size: inherit;
+            }
+        }
+    }
+}
+
+.yellow {
+    .header-container,
+    .application__btn,
+    .todos__item {
+        background-color: $theme-color--yellow;
+    }
+}
+
+.gray {
+    .header-container,
+    .application__btn,
+    .todos__item {
+        background-color: $theme-color--gray;
+    }
+}
+
+.red {
+    .header-container,
+    .application__btn,
+    .todos__item {
+        background-color: $theme-color--red;
+    }
+}

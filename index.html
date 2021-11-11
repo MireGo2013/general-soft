@@ -9,9 +9,9 @@
         <title>Todo list</title>
     </head>
     <body>
-        <section id="login" class="page-authorization">
+        <section class="page-authorization" id="login">
             <div class="page-authorization-container">
-                <form id="sign-up" class="form hide">
+                <form class="form hide" id="sign-up">
                     <div class="form-container">
                         <h1 class="form__title">Sign Up</h1>
                         <div class="form__field">
@@ -31,7 +31,7 @@
                     <p class="form__notice">Already have an account? Try to <a class="form__link link-in" href="#">Sign-in!</a></p>
                 </form>
 
-                <form id="sign-in" class="form">
+                <form class="form" id="sign-in">
                     <div class="form-container">
                         <h1 class="form__title">Sign In</h1>
                         <div class="form__field">
@@ -49,42 +49,40 @@
             </div>
         </section>
 
-        <section id="page-content" class="page-app hide">
-            <header id="header" class="header">
+        <section class="application hide" id="page-content">
+            <header class="header" id="header">
                 <div class="header-container">
                     <h1 class="header__title">ToDo List Aplication</h1>
-                    <button id="header-btn" class="header__btn btn">Logout</button>
+                    <button class="header__btn btn" id="header-btn">Logout</button>
                 </div>
             </header>
-            <main id="main" class="main-container">
-                <h2 class="main-container__title">Welcome, <span id="welcome"></span>, here are your tasks</h2>
-                <div class="controls">
-                    <form id="search" class="controls-search">
-                        <div class="controls-search__field">
-                            <input type="search" name="title" placeholder="Search by title..." autocomplete="off" />
+            <main class="application__content" id="main">
+                <h2 class="application__title">Welcome, <span class="application__title-name" id="welcome"></span>, here are your tasks</h2>
+                <div class="application__controls">
+                    <form class="form-search application__form-search" id="search">
+                        <div class="form-search__field">
+                            <input class="form-search__field-input" type="search" name="title" placeholder="Search by title..." autocomplete="off" />
                         </div>
-                        <div class="controls-search__field">
-                            <select name="status">
-                                <option value="all" selected>All</option>
-                                <option value="processing">In Processing</option>
-                                <option value="done">Completed</option>
+                        <div class="form-search__field">
+                            <select class="form-search__field-select" name="status">
+                                <option class="form-search__field-select-option" value="all" selected>All</option>
+                                <option class="form-search__field-select-option" value="processing">In Processing</option>
+                                <option class="form-search__field-select-option" value="done">Completed</option>
                             </select>
                         </div>
                     </form>
-                    <div class="controls-todos">
-                        <p>List is empty</p>
-                    </div>
-                    <div class="controls-theme">
-                        <div class="controls-theme__field">
-                            <select id="theme" name="theme">
-                                <option value="gray" selected>Gray</option>
-                                <option value="yellow">Yellow</option>
-                                <option value="red">Red</option>
+                    <div class="todos application__todos"><div class="todos-container"></div></div>
+                    <div class="theme application__theme">
+                        <div class="theme__field">
+                            <select class="theme__field-select" id="theme" name="theme">
+                                <option class="theme__field-select-option" value="gray" selected>Gray</option>
+                                <option class="theme__field-select-option" value="yellow">Yellow</option>
+                                <option class="theme__field-select-option" value="red">Red</option>
                             </select>
                         </div>
                     </div>
                 </div>
-                <button id="create-btn" class="main__btn btn btn_add"></button>
+                <button class="btn application__btn" id="create-btn"></button>
             </main>
         </section>
 
@@ -92,73 +90,33 @@
             <form class="modal-container">
                 <h2 class="modal__title">Add New</h2>
                 <div class="modal__field">
-                    <input class="input" type="text" name="title" placeholder="Title..." />
+                    <input class="modal__field-input" type="text" name="title" placeholder="Title..." />
                 </div>
                 <div class="modal__field">
-                    <textarea class="textarea" name="description" placeholder="Description..."></textarea>
+                    <textarea class="modal__field-textarea" name="description" placeholder="Description..."></textarea>
                 </div>
                 <button class="modal__btn btn" type="submit">Add</button>
             </form>
         </div>
-
         <div id="edit" class="modal hide">
             <form class="modal-container">
                 <h2 class="modal__title">Edit</h2>
                 <div class="modal__field">
-                    <input class="input" type="text" name="title" placeholder="Title..." />
+                    <input class="modal__field-input" type="text" name="title" placeholder="Title..." />
                 </div>
                 <div class="modal__field">
-                    <textarea class="textarea" name="description" placeholder="Description..."></textarea>
+                    <textarea class="modal__field-textarea" name="description" placeholder="Description..."></textarea>
                 </div>
                 <button class="modal__btn btn" type="submit">Save</button>
             </form>
         </div>
-
         <div id="info" class="modal hide"></div>
-
         <div id="confirm" class="modal hide"></div>
 
-        <div id="notification" class="notification__wrapper hide">
+        <div id="notification" class="notification hide">
             <span class="notification__text"></span>
         </div>
 
         <script src="./src/index.js" type="module"></script>
     </body>
 </html>
-
-<!-- <section id="page-content" class="hide">
-    <header id="header" class="main__header">
-        <h1 class="main__header_title">ToDo List Aplication</h1>
-        <button id="header-btn" class="main__header_btn btn">Logout</button>
-    </header>
-    <main id="main" class="main-container">
-        <h2 class="main-container__title">Welcome, <span id="welcome"></span>, here are your tasks</h2>
-        <div class="controls">
-            <form id="search" class="controls-search">
-                <div class="controls-search__field">
-                    <input type="search" name="title" placeholder="Search by title..." autocomplete="off" />
-                </div>
-                <div class="controls-search__field">
-                    <select name="status">
-                        <option value="all" selected>All</option>
-                        <option value="processing">In Processing</option>
-                        <option value="done">Completed</option>
-                    </select>
-                </div>
-            </form>
-            <div class="controls-todos">
-                <p>List is empty</p>
-            </div>
-            <div class="controls-theme">
-                <div class="controls-theme__field">
-                    <select id="theme" name="theme">
-                        <option value="gray" selected>Gray</option>
-                        <option value="yellow">Yellow</option>
-                        <option value="red">Red</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <button id="create-btn" class="main__btn btn btn_add"></button>
-    </main>
-</section> -->

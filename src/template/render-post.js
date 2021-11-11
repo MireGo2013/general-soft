@@ -4,7 +4,7 @@ export const renderTodos = (filters = {}) => {
     let { todoList } = Storage.getUserData();
 
     if (todoList.length === 0) {
-        return '<p class="controls-todos__notice">List is empty</p>';
+        return '<p class="todos__notice">List is empty</p>';
     }
     const filtersTodoList = todoList.filter((todo) => {
         let isFindTodo = true;
@@ -26,19 +26,19 @@ export const renderTodos = (filters = {}) => {
     });
 
     if (filtersTodoList.length === 0) {
-        return '<p class="controls-todos__notice">Nothing found</p>';
+        return '<p class="todos__notice">Nothing found</p>';
     }
 
     return filtersTodoList
         .map((todo) => {
-            const style = todo.status === 'done' ? 'controls-todos__item done' : 'controls-todos__item';
+            const style = todo.status === 'done' ? 'todos__item todos__item--done' : 'todos__item';
 
             return `
         <div class="${style}" data-todo-id=${todo.id} data-todo-status=${todo.status}>
-            <div class="controls-todos__item-action status"></div>
-            <p class="controls-todos__item_title">${todo.title}</p>
-            <div class="controls-todos__item-action edit"></div>
-            <div class="controls-todos__item-action remove"></div>
+            <div class="todos__item-status"></div>
+            <p class="todos__item-title">${todo.title}</p>
+            <div class="todos__item-edit"></div>
+            <div class="todos__item-remove"></div>
         </div>
         `;
         })
